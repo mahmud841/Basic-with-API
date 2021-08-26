@@ -29,5 +29,12 @@ function loadPost(){
 loadPost(); // load post click kora lagbe na auto load hoye jabe function call kore debar jonne 
 
 function displayUsers (json) {
-    console.log(json)
+    const ul = document.getElementById('users');
+    for (const user of json){
+        console.log(user.name);
+        const li = document.createElement('li');
+        // li.innerText = user.name;
+        li.innerText = `name : ${user.name} email: ${user.email}`;
+        ul.appendChild(li);
+    }
 }
