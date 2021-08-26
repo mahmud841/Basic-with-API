@@ -20,3 +20,21 @@ function dsiplayPosts(posts) {
     }
     // console.log(posts);
 }
+
+//post korar jonne extra kaj hosse nicher moto
+function addPost (){
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method:'POST',
+        body:JSON.stringify({
+            title: 'My own post ',
+            body: 'This is my all the posts ',
+            userId: 11
+        }),
+        headers:{
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(res =>  res.json())
+    .then(data => console.log(data))
+
+}
